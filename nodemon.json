@@ -1,0 +1,9 @@
+{
+	"events": {
+		"start": "clear"
+	},
+	"watch": ["src", ".env"],
+	"ext": ".js,.ts",
+	"ignore": [],
+	"exec": "tsx src/main.ts"
+}

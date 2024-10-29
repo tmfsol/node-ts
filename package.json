@@ -1,0 +1,48 @@
+{
+	"private": true,
+	"name": "node-ts",
+	"version": "1.0.0",
+	"main": "main.js",
+	"devDependencies": {
+		"@commitlint/cli": "^19.5.0",
+		"@commitlint/config-conventional": "^19.5.0",
+		"@eslint/js": "^9.13.0",
+		"@types/node": "^22.8.2",
+		"devmoji": "^2.3.0",
+		"eslint": "^9.13.0",
+		"eslint-plugin-autofix": "^2.2.0",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-prefer-arrow-functions": "^3.4.1",
+		"globals": "^15.11.0",
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
+		"nodemon": "^3.1.7",
+		"prettier": "^3.3.3",
+		"rimraf": "^6.0.1",
+		"tsc-alias": "^1.8.10",
+		"tsx": "^4.19.2",
+		"typescript": "^5.6.3",
+		"typescript-eslint": "^8.12.2"
+	},
+	"scripts": {
+		"prepare": "husky",
+		"lint": "eslint --fix",
+		"pretty": "prettier --write",
+		"dev": "nodemon",
+		"build": "rimraf dist && tsc && tsc-alias",
+		"start": "node dist/main.js"
+	},
+	"lint-staged": {
+		"src/**/*.{js,ts}": [
+			"pnpm lint",
+			"pnpm pretty"
+		]
+	},
+	"engines": {
+		"node": ">= v20.18.0",
+		"npm": "please-use-pnpm",
+		"yarn": "please-use-pnpm",
+		"pnpm": ">= v9.12.0"
+	},
+	"packageManager": "pnpm@9.12.0"
+}
